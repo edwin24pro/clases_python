@@ -2,7 +2,7 @@
 #### - Tipos de datos
 #### - Variables
 #### - Operadores
-#### - Datos estruccturados
+#### - Controles de flujo
 #### - Funciones
 
 ## Tipos de datos:
@@ -90,4 +90,32 @@ amigos = [{},{},
 {}]
 }
 ```
+## Controles de flujo
+Exiten dostipos:
+### Decisión
+Solo se ejecuta el código si la condición se cumple o es verdadera.
+```python
+## Primero especificar eL código que se ejecutará si cumplle una condición.
+if condicion:
+    print('cush')
+else: ## si no es verdad
+    print('no HAY')
+```
+Podremos hacer si la condición sea falsa se ejecute otro código en este caso se utiliza eL 'else'.
+Vamos a ver alúnos ejemplos de ambos.
+```python
+if True:
+    print('se ejecuta esto')
+else:
+    print('Esto nos se ejecuta')
+```
+```python
+if False:
+    print('No se ejecuta')
+else:
+    print('Se ejecuta esto')
+```
+### Ciclos
+
+
 ## Funciones
