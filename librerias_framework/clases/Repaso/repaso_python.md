@@ -116,6 +116,22 @@ else:
     print('Se ejecuta esto')
 ```
 ### Ciclos
+Existen dos tipos:
+Uno de ellos es iterar cuando sabes la cantidad de veces.
+Ejm:
+```python
+## Primero utilizamos la palabra reservada for y luego un contador y en siguiente
+## cantidad a repetir.
+for contador numero_a_repetir:
 
-
+```
+El otro es iterar cuando no sabes la cantidad de veces. Ejm:
+Ejm:
+```python
+for i in (1, 2, 3):
+    print(i)
+# 1 = 1
+# 2 = 2
+# 3 = 3
+```
 ## Funciones

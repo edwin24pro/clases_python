@@ -1,5 +1,5 @@
 ## 1. Crear un program que me pida la edad de una persona si la esdad es mayor o igual a 18 que me muesyre un
-#  mensaje 'eress mayor de edad' cso contrario que me muestre un mensaje 'eres menor de edad.
+#  mensaje 'eres mayor de edad' cso contrario que me muestre un mensaje 'eres menor de edad.
 nombre_persona = int(input('Ingresa tu edad: '))
 if  nombre_persona >= 18:
     print('eres mayor de edad')
@@ -20,3 +20,4 @@ if compra_valor >= 1000:
     print(f'Ganaste un descuento del {descuento}%, usted pagará {valor_pagar} soles y el descuento es de {descontar} soles')
 else:
     print(f'No aplicas al descuento, solo compraste valor {compra_valor} soles')
+
