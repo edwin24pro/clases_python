@@ -134,4 +134,22 @@ for i in (1, 2, 3):
 # 2 = 2
 # 3 = 3
 ```
+while
 ## Funciones
+Existen dos tipos:
+### Propias del lenguajes
+que ya bienen creadas e insertadoas en python y estan listas para ser usadas.
+estructura de uso de una funcion, para conocer, este tiene un nombre seguido de parentesis
+por medio de parentesis podremos pasarle datos para que pueda funcionar. Ejm.
+#### Funciones integradas
+
+```pyhton
+print('Chanchito feliz')
+# chanchito felis
+```
+```pyhton
+input('referencia')
+## Es una funcion que se detiene hasta que se introdusca los datos
+```
+
+### Funciones creadas
