@@ -19,34 +19,49 @@ abs(-5)
 comlex(2,2)
 complex('3+1j')
 #En el primer caso el resultadobes (2,2j) y es de número complejo.
-
-- **Función pow(base, exp)**, Retorna base elevado a exp.
-
->>> pow(5,2)
-
-25
-
->>> pow(5,-2)
-
-# Result = 1/25
-
-0.04
-
-- **List()**, Con esta función se puede crear un listado y aportan un gran nivel de flexibilidad al trabajar con conjuntos de datos.
-```python
-
 ```
-- **Type()**, Se trata de una función básica de Python que se utiliza principalmente con objetivos de depuración de código.
-```python
+- **Función pow(base, exp)**, Retorna base elevado a exp. Ejm.
 
+```python
+pow(2,1)
+pow(5,-2)
+##la respues es 2, y 0.04 respectivamente por el numero que tienen como base y exponente.
 ```
-- **Tuple()**, Permiten crear una lista, pero con dos características diferentes (inmutabilidad, pues sus valores no pueden ser modificados, y rapidez, pues su uso acelera el proceso de cálculo).
+- **List()**, Con esta función se puede crear un listado y aportan un gran nivel de flexibilidad al trabajar con conjuntos de datos. Ejm.
 ```python
-
+nombres = 'jhonatan', 'edwin', 'jory'
+edad = 1, 2,5
+list(nombres) # ['jhonatan', 'edwin', 'jory']
+list(edad) # [1,2,5]
+## En ambos cosos nos devuelve los datos de la variable en una lista
 ```
-- **Replace()**, Otra función de texto interesante de este lenguaje de programación que permite sustituir caracteres dentro de una cadena.
+- **Type()**, Se trata de una función básica de Python que se utiliza principalmente con objetivos de depuración de código. Ejm.
 ```python
+nombres = ['jhonatan', 'edwin', 'jory']
+pais = 'peru'
+edad = 5
+viven = True
+estatura = 1.2, 4.6, 2.3
+calzado = 12.3
 
+type(nombre) #list
+type(pais) #str
+type(edd) #int
+type(vive) #bool
+type(estatura) #tuple
+type(calzado) #float
+##Principalmente se encarga de mostrar el tipo de dato que almacena un variable
+```
+- **Tuple()**, Permiten crear una lista, pero con dos características diferentes (inmutabilidad, pues sus valores no pueden ser modificados, y rapidez, pues su uso acelera el proceso de cálculo). Ejm.
+```python
+numeros = 2,3,4,5
+tuple(numeros) #(2,3,4,5)
+los datos son convertidos a duplas.
+```
+- **Replace()**, Otra función de texto interesante de este lenguaje de programación que permite sustituir caracteres dentro de una cadena. Ejm.
+```python
+saludo = 'Buen día'
+saludo.replace('a','s') #Buen dís
 ```
 - **Str()**, Conocido también como string, es una función que devuelve la representación de cadena de un número (presenta una secuencia inmutable de caracteres Unicode).
 ```python
