@@ -151,5 +151,36 @@ print('Chanchito feliz')
 input('referencia')
 ## Es una funcion que se detiene hasta que se introdusca los datos
 ```
+```pyhton
+open()
+```
+
 
 ### Funciones creadas
+Son miniprogramas teniendo un inicio y un final también conocido
+como módulo o fragmentos de código de uso exclusivo.
+### Funciones propias
+### Pasos para crear una funcion propia
+#### 1. Hacer uso de la palabra  reservada def
+#### 2. Definir un nombre de funcion que describa que tarea va  a realizar
+#### 3. Establecer los paramettros que recivira la funcion entre parentesis ().
+#### 4. Establecer que valor o dato va retornar mi funcion print
+() para retornar un mensaje  en nuestra función usamos la palabra reservada return
+> Observación = >> También podemos utilizar la función print() para retornar un mendsaje en nuestra función
+Existen dos tipos de funciones los que no reciben ningún parametro.
+
+```python
+def saludo :
+    print('Hola este es el mostrador de texto de python')
+```
+
+```python
+def saludo :
+    print('Hola este es el mostrador de texto de python')
+```
+```python
+Ejercicio:
+def suma(a, b):
+    resultado = print(a+b)
+    return resultado
+```
