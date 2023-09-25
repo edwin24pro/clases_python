@@ -125,3 +125,116 @@ Las siguientes funciones de python son más uzadas.
 ```python
 
 ```
+## Averiguar sobre entornos virtuales en python
+Diferentes aplicaciones pueden entonces usar entornos virtuales diferentes. Para resolver el ejemplo de requerimientos en conflicto citado anteriormente, la aplicación A puede tener su propio entorno virtual con la versión 1.0 instalada mientras que la aplicación B tiene otro entorno virtual con la versión 2.0. Si la aplicación B requiere que actualizar la librería a la versión 3.0, ésto no afectará el entorno virtual de la aplicación A.
+
+### Creando entornos virtuales
+El script usado para crear y manejar entornos virtuales espyvenv. pyvenv normalmente instalará la versión mas reciente de Python que tengas disponible; el script también es instalado con un número de versión, con lo que si tienes múltiples versiones de Python en tu sistema puedes seleccionar una versión de Python específica ejecutando python3 o la versión que desees.
+
+Para crear un entorno virtual, decide en que carpeta quieres crearlo y ejecuta el módulo venv como script con la ruta a la carpeta:
+```cmd
+python -m venv tutorial-env
+```
+
+Esto creará el directorio tutorial-env si no existe, y también creará directorios dentro de él que contienen una copia del intérprete de Python y varios archivos de soporte.
+
+Una ruta común para el directorio de un entorno virtual es .venv. Ese nombre mantiene el directorio típicamente escondido en la consola y fuera de vista mientras le da un nombre que explica cuál es el motivo de su existencia. También permite que no haya conflicto con los ficheros de definición de variables de entorno .env que algunas herramientas soportan.
+
+Una vez creado el entorno virtual, podrás activarlo.
+
+En Windows, ejecuta:
+```cmd
+tutorial-env\Scripts\activate.bat
+```
+
+
+### Manejando paquetes con pip
+You can install, upgrade, and remove packages using a program called pip. By default pip will install packages from the Python Package Index. You can browse the Python Package Index by going to it in your web browser.
+
+pip tiene varios subcomandos: «install», «uninstall», «freeze», etc. (Consulte la guía Instalando módulos de Python para obtener la documentación completa de pip).
+
+Se puede instalar la última versión de un paquete especificando el nombre del paquete:
+```cmd
+(tutorial-env) $ python -m pip install novas
+Collecting novas
+  Downloading novas-3.1.1.3.tar.gz (136kB)
+Installing collected packages: novas
+  Running setup.py install for novas
+Successfully installed novas-3.1.1.3
+```
+
+También se puede instalar una versión específica de un paquete ingresando el nombre del paquete seguido de == y el número de versión:
+```cmd
+(tutorial-env) $ python -m pip install requests==2.6.0
+Collecting requests==2.6.0
+  Using cached requests-2.6.0-py2.py3-none-any.whl
+Installing collected packages: requests
+Successfully installed requests-2.6.0
+```
+
+Si se ejecuta de nuevo el comando, pip detectará que la versión ya está instalada y no hará nada. Se puede ingresar un número de versión diferente para instalarlo, o se puede ejecutar pip install --upgrade para actualizar el paquete a la última versión:
+
+```cmd
+(tutorial-env) $ python -m pip install --upgrade requests
+Collecting requests
+Installing collected packages: requests
+  Found existing installation: requests 2.6.0
+    Uninstalling requests-2.6.0:
+      Successfully uninstalled requests-2.6.0
+Successfully installed requests-2.7.0
+```
+pip -m pip uninstall seguido de uno o varios nombres de paquetes eliminará los paquetes del entorno virtual.
+
+python -m pip show mostrará información de un paquete en particular:
+
+```cmd
+(tutorial-env) $ python -m pip show requests
+---
+Metadata-Version: 2.0
+Name: requests
+Version: 2.7.0
+```
+
+Summary: Python HTTP for Humans.
+Home-page: http://python-requests.org
+Author: Kenneth Reitz
+Author-email: me@kennethreitz.com
+License: Apache 2.0
+Location: /Users/akuchling/envs/tutorial-env/lib/python3.4/site-packages
+Requires:
+python -m pip list mostrará todos los paquetes instalados en el entorno virtual:
+
+```cmd
+(tutorial-env) $ python -m pip list
+novas (3.1.1.3)
+numpy (1.9.2)
+pip (7.0.3)
+requests (2.7.0)
+setuptools (16.0)
+```
+
+python -m pip freeze retorna una lista de paquetes instalados, pero el formato de salida es el requerido por python -m pip install. Una convención común es poner esta lista en un archivo requirements.txt:
+
+```cmd
+(tutorial-env) $ python -m pip freeze > requirements.txt
+(tutorial-env) $ cat requirements.txt
+novas==3.1.1.3
+numpy==1.9.2
+requests==2.7.0
+```
+
+El archivo requirements.txt puede ser agregado al controlador de versiones y distribuido como parte de la aplicación. Los usuarios pueden entonces instalar todos los paquetes necesarios con install -r:
+
+```cmd
+(tutorial-env) $ python -m pip install -r requirements.txt
+Collecting novas==3.1.1.3 (from -r requirements.txt (line 1))
+  ...
+Collecting numpy==1.9.2 (from -r requirements.txt (line 2))
+  ...
+Collecting requests==2.7.0 (from -r requirements.txt (line 3))
+```
+ ...
+Installing collected packages: novas, numpy, requests
+  Running setup.py install for novas
+Successfully installed novas-3.1.1.3 numpy-1.9.2 requests-2.7.0
+pip has many more options. Consult the Instalando módulos de Python guide for complete documentation for pip. When you’ve written a package and want to make it available on the Python Package Index.

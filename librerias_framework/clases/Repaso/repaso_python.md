@@ -184,3 +184,9 @@ def suma(a, b):
     resultado = print(a+b)
     return resultado
 ```
+## FUnciones con muchos parametros "pythontutor"
+```python
+def funcion(*args)
+Ejm:
+def nombres()
+```
