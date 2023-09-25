@@ -149,10 +149,14 @@ Sus usos.
     bin(4) #sera 0b100
     bin(-4) #será -0b100
 ```
+```python
 ## Averiguar sobre entornos virtuales en python
+```
+## Entorno virtual
 Diferentes aplicaciones pueden entonces usar entornos virtuales diferentes. Para resolver el ejemplo de requerimientos en conflicto citado anteriormente, la aplicación A puede tener su propio entorno virtual con la versión 1.0 instalada mientras que la aplicación B tiene otro entorno virtual con la versión 2.0. Si la aplicación B requiere que actualizar la librería a la versión 3.0, ésto no afectará el entorno virtual de la aplicación A.
 
 ### Creando entornos virtuales
+
 El script usado para crear y manejar entornos virtuales espyvenv. pyvenv normalmente instalará la versión mas reciente de Python que tengas disponible; el script también es instalado con un número de versión, con lo que si tienes múltiples versiones de Python en tu sistema puedes seleccionar una versión de Python específica ejecutando python3 o la versión que desees.
 
 Para crear un entorno virtual, decide en que carpeta quieres crearlo y ejecuta el módulo venv como script con la ruta a la carpeta:
