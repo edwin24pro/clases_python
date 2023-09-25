@@ -19,6 +19,10 @@ print(lista_nueva)
 ## 8. Escribir un programa que reciba una cadena de caracteres y devuelva
 #  un objeto con cada palabra que contiene y su frecuencia.
 nombre = 's o l'
+objeto = []
 for i in nombre:
-objeto = nombre.object(' ')
+    objetos={i}
+    objeto.append(objetos)
+
+
 print(objeto)

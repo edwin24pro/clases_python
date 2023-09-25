@@ -157,7 +157,7 @@ Diferentes aplicaciones pueden entonces usar entornos virtuales diferentes. Para
 
 ### Creando entornos virtuales
 
-El script usado para crear y manejar entornos virtuales espyvenv. pyvenv normalmente instalará la versión mas reciente de Python que tengas disponible; el script también es instalado con un número de versión, con lo que si tienes múltiples versiones de Python en tu sistema puedes seleccionar una versión de Python específica ejecutando python3 o la versión que desees.
+El script usado para crear y manejar entornos virtuales es pyvenv. pyvenv normalmente instalará la versión mas reciente de Python que tengas disponible; el script también es instalado con un número de versión, con lo que si tienes múltiples versiones de Python en tu sistema puedes seleccionar una versión de Python específica ejecutando python3 o la versión que desees.
 
 Para crear un entorno virtual, decide en que carpeta quieres crearlo y ejecuta el módulo venv como script con la ruta a la carpeta:
 ```cmd
