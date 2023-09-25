@@ -105,25 +105,49 @@ Las siguientes funciones de python son más uzadas.
     max(numeros) #será 4
     ##Obtiene el dator mayor de todos.
     ```
-- **Range()** Función de Python para generar una sucesión de números enteros de forma personalizada.
-```python
+- **Range()** Función de Python para generar una sucesión de números enteros de forma personalizada. Existen tres formas.
+   - range(stop)toma un argumento.
+   - range(start, stop)toma dos argumentos.
+   - range(start, stop, step)toma tres argumentos.
+Sus usos.
 
-```
+    ```python
+    ##stop
+    for i in range(2):
+        print(i) #será 0, 1
+    ##start, stop
+    for i in range(2,4):
+        print(i) #Será 2,3
+    ##start, stop, step
+    for i in range(2,10,3):
+        print(i) #será 2, 5, 8
+    ```
 - **Round()** Cuando se trabaja con números matemáticos es importante disponer de una función capaz de realizar redondeos después de la coma, siendo esta la función de Python que se encarga de este proceso.
-```python
-
-```
-- **Hex()**, Esta función que se incorporó a partir de la versión 3 de Python, convierte un número entero en una cadena hexadecimal con prefijo “0x”.
-```python
-
-```
-- **Id()**, Se trata de una función nativa que muestra un número entero que es único para cada objeto en memoria.
-```python
-
-```
-- **Bin()**, Convierte un número entero en una cadena binaria incluyendo el prefijo “0b”.
-```python
-
+  uso round(numero, digito) Ejm.
+    ```python
+    numero_decimal = 0.945
+    round(numero_decimal,2) #será 0.94
+    round(numero_decimal,1) #será 0.9
+    rund(numero_decimal) #será 1
+    ```
+- **Hex()**, Esta función que se incorporó a partir de la versión 3 de Python, convierte un número entero en una cadena hexadecimal con prefijo “0x”. Ejm.
+  
+    ```python
+    hex(4) #será 0x4
+    hex('hola') #será error
+    ```
+- **Id()**, Se trata de una función nativa que muestra un número entero que es único para cada objeto en memoria. Ejm.
+  
+    ```python
+    num1 = 3
+    num2 = 4
+    id(num1) #será un numero similar 499567470960.
+    id(num2 #será otro numero similar 499567470992.
+    ```
+- **Bin()**, Convierte un número entero en una cadena binaria incluyendo el prefijo “0b”. Ejm.
+    ```python
+    bin(4) #sera 0b100
+    bin(-4) #será -0b100
 ```
 ## Averiguar sobre entornos virtuales en python
 Diferentes aplicaciones pueden entonces usar entornos virtuales diferentes. Para resolver el ejemplo de requerimientos en conflicto citado anteriormente, la aplicación A puede tener su propio entorno virtual con la versión 1.0 instalada mientras que la aplicación B tiene otro entorno virtual con la versión 2.0. Si la aplicación B requiere que actualizar la librería a la versión 3.0, ésto no afectará el entorno virtual de la aplicación A.
