@@ -34,3 +34,14 @@ deactivate
 | letra      dos |   ignore  |hsdsdj|
 
 Para la 🌤: Crear un entorno venv de python e instalar el frame django para la creación de app web
+## Averiguar programación orientado a objetos
+# **Progrmación orientado a objetos (POO)**
+Se realiza la reutilización de código creando programas mucho más conplejos así sel logra estar mucho mlás cerca a expresar las cosas en la vida real.
+
+Existen:
+## - **objetos**.
+    Son cosas que nos rodean que contoenen caraterísticas con
+    diferentes usos.
+## - **clases**
+    Son moldes para crear objetos con diferentes características.
+
