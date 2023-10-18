@@ -1,7 +1,8 @@
 ## Instanciando objetos
+```python
 class Celular:
     ## atributos de de tipo clase
-    #que son iguales para todos los cófigos
+    #que son iguales para todos los códigos
     #que se creen
     familia = 'Smart Phone'
     #atributos de instancia
@@ -29,3 +30,4 @@ llamandoNadine = Celular('alcatel', 'basico', '76344', '9366327')
 print(llamandoJory.marca)
 print(llamandoJory.familia)
 print(llamandoJory.llamar('Ollanta'))
+```
