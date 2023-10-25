@@ -29,6 +29,10 @@ class Tiendas_comerciales:
         negocio_actualizar = list(filter(lambda el:el['ruc']==ruc,bd_negocios))[0].update({'nombre':nombre_nuevo, 'categoria':categoria, 'gerente':gerente, 'horario_atencion':[dia,tarde,noche]})
         
         return 'se actualizo'
+
+    def actualizar_hora_atension(self, ruc, bd_negocios, hora_dia = '',hora_tarde='', hora_noche=''):
+        actualizar_hora_atension =list(filter(lambda el:el['ruc'] == ruc, bd_negocios))[0].update({'dia':hora_dia, 'tarde':hora_tarde, 'noche':hora_noche})
+        return 'se cambio la hora de atension'
         
 
     #otro metodo para agregar un nuevo producto
@@ -54,8 +58,8 @@ class Tiendas_comerciales:
     #otro metodo para actualizar el horario de atencion
 
 
-    def mostrar_todo(self):
-        pass
+    def mostrar_todo(self, bd_negocios):
+        return bd_negocios
     
 gerente=Tiendas_comerciales()
 # print(gerente.tienda_gerente(negocios,"china"))
@@ -65,4 +69,5 @@ gerente=Tiendas_comerciales()
 #print(gerente.actualizar_negocio(1234,negocios,'estrella', 'disfraz','2p,-1pm', '3pm-8pm'))#, 'cerveza', 'chamo', '8am-1pm', '3pm-6pm'))
 #print(negocios)
 print(gerente.agregar_negocio('3624', negocios, 'la negrita', 'carne', 'latas', '6am-7am', '4pm-5pm', categoria3='leche', gerente='chamelita'))
-print(negocios)
+print(gerente.actualizar_hora_atension('3624', negocios, '2am-4am'))
+print(gerente.mostrar_todo(negocios))
