@@ -10,3 +10,6 @@ print(f'''
 la moda es {moda}
 ''')
 ```
+## Map()
+Esta funcion modifica los claves y datos de un nobjeto.
+### Funcionamineto
