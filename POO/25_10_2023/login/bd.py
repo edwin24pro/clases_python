@@ -1,1 +1,45 @@
-print('hola')
+usuarios=[
+{
+        'dni':'1',
+        'nombre':'EDWIN',
+        'fecha_nacimiento':'10/04/2003',
+        'edad':'',
+        'usuario':'win',
+        'password':'1234'
+},
+{
+        'dni':'2',
+        'nombre':'CHINA',
+        'fecha_nacimiento':'02/12/2010',
+        'edad':'',
+        'usuario':'chinin',
+        'password':'a133'
+},
+{
+        'dni':'3',
+        'nombre':'SASI',
+        'fecha_nacimiento':'01/05/2011',
+        'edad':'',
+        'usuario':'sss',
+        'password':'a122'
+},
+{
+        'dni':'4',
+        'nombre':'JORY',
+        'fecha_nacimiento':'02/11/2000',
+        'edad':'',
+        'usuario':'jory',
+        'password':'a111'
+},
+{
+        'dni':'5',
+        'nombre':'CHAMO',
+        'fecha_nacimiento':'04/02/1999',
+        'edad':'',
+        'usuario':'cham',
+        'password':'a444'
+}
+]
+# cada objeto tendra los datos de una persona. nombre edad, fecha_nacimiento,dni, usuario y password
+#mínimo 5 usuarios maximo 10 usuarios
+
