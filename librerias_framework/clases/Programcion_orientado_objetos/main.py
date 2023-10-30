@@ -31,3 +31,14 @@ maria.pais = 'chile'
 
 print(victor.edad)
 print(maria.edad)
+#Metodos
+#Es cuando una funcion esta en una clase (método)
+## self hace referencia a un determinado objeto
+class Matematica:
+    def suma(self):
+        self.n1 = 1
+        self.n2 = 2
+
+s = Matematica()
+s.suma()
+print(s.n1 + s.n2)
