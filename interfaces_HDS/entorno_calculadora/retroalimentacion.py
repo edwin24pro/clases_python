@@ -16,14 +16,24 @@ boton_enter.pack()
 ventana.mainloop()'''
 from tkinter import *
 ws=Tk()
-def task(event):
-    print("PythonGuides")
+def nueva_ventana():
+    ventana = Tk()
+    saludo = Label(text='bienvenido a la nueva ventana').pack()
+    ventana.mainloop()
+
+def task():
+    ws.destroy()
+    nueva_ventana()
+    
 ws.geometry("200x200")
 
-button=Button(ws,text="On Clicking Quit",command= ws.quit)
+button=Button(ws,text="On Clicking Quit",command= task)
 
 button.focus()
 button.pack(expand=True)
-button.bind('', task)
+
 
 ws.mainloop()
+
+    
+variable()

@@ -1,59 +1,13 @@
 from tkinter import *
-from operadores import *
-from funciones import*
+from funciones import insertar_dato_pantalla
 from fun import *
 ventana = Tk()
-'''#funciones de botones 0-9 tambien operadores
-def insertar_dato_pantalla(texto):
-    i = len(pantalla.get())
-    pantalla.insert(i, texto)
-
-#instanciamos nuestro objeto operadores
-ope = operador()
-
-#funcion operacion
-def motor_operacion():
-    operacion = pantalla.get()
-
-    for i in range(len(operacion)):
-        if '+' in operacion[i]:
-            indice = i
-            valor1 = int(operacion[:indice])
-            valor2 = int(operacion[indice+1:])
-            resultado = ope.sumar(valor1, valor2)
-            pantalla.delete(0, END)
-            pantalla.insert(0, resultado)
-        elif '-' in operacion[i]:
-            indice = i
-            valor1 = int(operacion[:indice])
-            valor2 = int(operacion[indice+1:])
-            resultado = ope.restar(valor1, valor2)
-            pantalla.delete(0, END)
-            pantalla.insert(0, resultado)
-        elif '*' in operacion[i] or 'x' in operacion[i]:
-            indice = i
-            valor1 = int(operacion[:indice])
-            valor2 = int(operacion[indice+1:])
-            resultado = ope.multiplicar(valor1, valor2)
-            pantalla.delete(0, END)
-            pantalla.insert(0, resultado)
-        elif '/' in operacion[i]:
-            indice = i
-            valor1 = int(operacion[:indice])
-            valor2 = int(operacion[indice+1:])
-            resultado = ope.dividir(valor1, valor2)
-            pantalla.delete(0, END)
-            pantalla.insert(0, resultado)
-#funcion boton borrar
-def borrar():
-    pantalla.delete(0,END)'''
 
 #instanciamos funciones
 
 ventana.geometry('175x250')
 ventana.title('calculadora')
 ventana.resizable(0,0)
-ventana.config(bg='black')
 bienvenida = Label(ventana, text='¡Bienvenid@!')
 pantalla = Entry(ventana, width=17, bg='#fff00e', font='Bahnschrift', borderwidth=5)
 pantalla.focus()
@@ -70,11 +24,11 @@ boton9 = Button(ventana, text='9', bg='#ef0ef0', padx=8, pady=4, borderwidth=0, 
 boton0 = Button(ventana, text='0', bg='#ef0ef0', padx=8, pady=4, borderwidth=0, command=lambda:insertar_dato_pantalla(pantalla,'0'))
 
 #botones operadores
-boton_suma = Button(ventana, text='+', bg='#0f0ef0', padx=8, pady=4,fg='white', borderwidth=0, command=lambda:insertar_dato_pantalla(pantalla,'+'))
-boton_resta = Button(ventana, text='-', bg='#0f0ef0', padx=8, pady=4,fg='white', borderwidth=0, command=lambda:insertar_dato_pantalla( pantalla,'-'))
-boton_multiplicacion = Button(ventana, text='x', bg='#0f0ef0', padx=8,fg='white', borderwidth=0, pady=4, command=lambda:insertar_dato_pantalla( pantalla,'x'))
-boton_division = Button(ventana, text='/', bg='#0f0ef0', padx=8, pady=4,fg='white', borderwidth=0, command=lambda:insertar_dato_pantalla( pantalla,'/'))
-boton_igual = Button(ventana, text='=', bg='#0ee000', padx=28, pady=4, borderwidth=0, command=lambda:motor_operacion(pantalla))
+boton_suma = Button(ventana, text='+', bg='#0f0ef0', padx=8, pady=4,fg='white', borderwidth=0, command=lambda:operacion(pantalla, '+'))
+boton_resta = Button(ventana, text='-', bg='#0f0ef0', padx=8, pady=4,fg='white', borderwidth=0, command=lambda:operacion(pantalla, '-'))
+boton_multiplicacion = Button(ventana, text='x', bg='#0f0ef0', padx=8,fg='white', borderwidth=0, pady=4, command=lambda:operacion(pantalla, '*'))
+boton_division = Button(ventana, text='/', bg='#0f0ef0', padx=8, pady=4,fg='white', borderwidth=0, command=lambda:operacion(pantalla, '/'))
+boton_igual = Button(ventana, text='=', bg='#0ee000', padx=28, pady=4, borderwidth=0, command=lambda:igual(pantalla))
 boton_borrar = Button(ventana, text='Borrar', bg='#f00000', padx=58, pady=4, borderwidth=0, command=lambda:borrar(pantalla))
 
 #pocion de la etiqueta saludo y pantalla
@@ -100,4 +54,3 @@ boton_igual.grid(row=6, column=1, columnspan=2)
 boton_borrar.grid(row=7, column=0, columnspan=4)
 
 ventana.mainloop()
-
