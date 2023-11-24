@@ -5,7 +5,7 @@ COLOR_FONDO_SECUNDARIRIO = '#b3dAff'
 TITULO_APP = 'APP DE EDWIN'
 date = datetime.datetime.now()
 HORA_ACTUAL = f"{date.day}-{date.month}-{date.year} Hora: {date.hour}:{date.minute}"
-COLOR_BOTON = '#66ffff'
+COLOR_BOTON = '#43A6CD'
 #FUNCION QUE NOS PERMITE CENTRAR NUESTRA PANTALLA
 def centrar_ventana(objeto, ancho_ventana, largo_ventana):
     pantalla_ancho = objeto.winfo_screenwidth()

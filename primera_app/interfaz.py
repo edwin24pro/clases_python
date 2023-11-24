@@ -1,6 +1,7 @@
 from tkinter import *
 from config import *
 from tkinter import ttk
+from funciones import *
 class Interfaz_app(Tk):
     def __init__(self):
         super().__init__()#heredamos los métodos
@@ -12,7 +13,7 @@ class Interfaz_app(Tk):
         self.config(bg=COLOR_FONDO_PRIMARIO)
         self.resizable(0,0)
         self.attributes('-alpha',0.96)
-        w,h = 800,470
+        w,h = 870,470
         centrar_ventana(self,w,h)
     
     def construir_widget(self):
@@ -23,6 +24,7 @@ class Interfaz_app(Tk):
         #caja para capturar el nombre
         self.label_nombre = Label(self.cajas_texto,text='Nombres', bg=COLOR_FONDO_PRIMARIO, fg='white',font=('Roboto',10)).pack(pady=10)
         self.nombre_texto = Entry(self.cajas_texto,bd=0, width=12, font=('arial',12))
+        self.nombre_texto.focus()
         self.nombre_texto.pack()
         #caja para capturar Apellido
         self.label_apellido = Label(self.cajas_texto,text='apellidos', bg=COLOR_FONDO_PRIMARIO, fg='white',font=('Roboto',10)).pack(pady=10)
@@ -39,13 +41,17 @@ class Interfaz_app(Tk):
         font=('arial',12),relief=FLAT, pady=60)
         self.cajas_botones.grid(column=1, row=0,padx=20, pady=20)
         #boton nuevo
-        self.nuevo = Button(self.cajas_botones, text='Nuevo', bg=COLOR_BOTON, fg='white', relief=FLAT, bd=0, width=20, height=2, font=('Arial',10)).pack(pady=8)
+        self.nuevo = Button(self.cajas_botones, text='Nuevo',command=lambda:nuevo(self), bg=COLOR_BOTON, fg='white', relief=FLAT, bd=0,
+        width=20, height=2, font=('Arial',10)).pack(pady=8)
         #boton de actualizar
-        self.actualizar = Button(self.cajas_botones, text='actualizar', bg=COLOR_BOTON, fg='white', relief=FLAT, bd=0, width=20, height=2, font=('Arial',10)).pack(pady=8)
+        self.actualizar = Button(self.cajas_botones, text='actualizar',command=lambda:actualizar(self), bg=COLOR_BOTON, fg='white', relief=FLAT,
+        bd=0, width=20, height=2, font=('Arial',10)).pack(pady=8)
         #boton de eliminar
-        self.eliminar = Button(self.cajas_botones, text='eliminar', bg=COLOR_BOTON, fg='white', relief=FLAT, bd=0, width=20, height=2, font=('Arial',10)).pack(pady=8)
+        self.eliminar = Button(self.cajas_botones, text='eliminar',command=lambda:eliminar(self), bg=COLOR_BOTON, fg='white', relief=FLAT,
+        bd=0, width=20, height=2, font=('Arial',10)).pack(pady=8)
         #boton de cancelar
-        self.cancelar = Button(self.cajas_botones, text='cancelar', bg=COLOR_BOTON, fg='white', relief=FLAT, bd=0, width=20, height=2, font=('Arial',10)).pack(pady=8)
+        self.cancelar = Button(self.cajas_botones, text='cancelar',command=lambda:limpiar(self), bg=COLOR_BOTON, fg='white', relief=FLAT, bd=0, width=20,
+        height=2, font=('Arial',10)).pack(pady=8)
         #fin de cajitas de botones
 
         #tabla de datos
@@ -70,4 +76,5 @@ class Interfaz_app(Tk):
             self.tabla_datos.insert('',END,text=nom, values=(ape,num))
         self.tabla_datos.place(x=0, y=0, width=400,height=600)
         self.tabla_datos.insert('', END, text='hola', values=('rodriguez','93344'))
+        self.tabla_datos.bind('<Double-1>',lambda event:doble_clic(self,event))
         #fin de tabla de datos
