@@ -51,7 +51,6 @@ def doble_clic(ventana,event):
         ventana.nombre_texto.insert(0,nombre)
         ventana.apellido_texto.insert(0,apellidos)
         ventana.celular_texto.insert(0,celulular)
-        ventana.tabla_datos.selection_remove(elemento_actualizar)
     else:
         showinfo(title='actualizar',message='ningún registro seleccionado para actualizar')
         ventana.tabla_datos.selection_remove(elemento_actualizar)
