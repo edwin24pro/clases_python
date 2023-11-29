@@ -59,22 +59,19 @@ class Interfaz_app(Tk):
         font=('arial',12),relief=FLAT, pady=60)
         self.cajas_datos.grid(column=2, row=0,padx=20, pady=20)
         #tabla
-        self.tabla_datos = ttk.Treeview(self.cajas_datos, columns=('#1','#2'))
+        self.tabla_datos = ttk.Treeview(self.cajas_datos, columns=('#1','#2','#3'))
         self.tabla_datos.column('#0',width=40)
-        self.tabla_datos.column('#01',width=120)
-        self.tabla_datos.column('#02',width=40)
-        self.tabla_datos.heading('#0',text='Nombre')
-        self.tabla_datos.heading('#1',text='Apellido')
-        self.tabla_datos.heading('#2',text='Celular')
-        alumnitos = [
-            ('moises','peñafiel','93838'),
-            ('yadira','medafiel', '93749'),
-            ('maria', 'dejory','894884'),
-            ('nadine', 'guadalupe', '48984')
-        ]
-        for nom,ape,num in alumnitos:
-            self.tabla_datos.insert('',END,text=nom, values=(ape,num))
+        self.tabla_datos.column('#1',width=40)
+        self.tabla_datos.column('#02',width=120)
+        self.tabla_datos.column('#03',width=40)
+        self.tabla_datos.heading('#0',text='id')
+        self.tabla_datos.heading('#1',text='Nombre')
+        self.tabla_datos.heading('#2',text='Apellido')
+        self.tabla_datos.heading('#3',text='Celular')
+        alumnitos = db.mostrar('Usuarios')
+        for id,nom,ape,num in alumnitos:
+            self.tabla_datos.insert('',END,text=id, values=(nom,ape,num))
         self.tabla_datos.place(x=0, y=0, width=400,height=600)
-        self.tabla_datos.insert('', END, text='hola', values=('rodriguez','93344'))
+        # self.tabla_datos.insert('', END, text='hola', values=('rodriguez','93344'))
         self.tabla_datos.bind('<Double-1>',lambda event:doble_clic(self,event))
         #fin de tabla de datos

@@ -1,6 +1,12 @@
 from tkinter import *
 from tkinter.messagebox import *
+import orm
+from Tablas.Usuarios import Usuarios
+#creamos nuestra base de datos
+db = orm.SQLiteORM("db_diario_escolar")
+db.crear_tabla(Usuarios)
 #funcion limpiar
+
 def limpiar(ventana):
     ventana.nombre_texto.delete(0,END)
     ventana.apellido_texto.delete(0,END)
@@ -11,6 +17,12 @@ def nuevo(ventana):
     name = ventana.nombre_texto.get()
     apellido = ventana.apellido_texto.get()
     celular = ventana.celular_texto.get()
+    date = {
+        "Nombre":name,
+        "Apellido":apellido,
+        "Celular":celular
+    }
+    db.insertarUno('Usuarios',date)
     showinfo(title='save', message='nuevo registro agregado')
     #nuevo
     ventana.tabla_datos.insert('',END, text=name, values=(apellido,celular))
@@ -18,8 +30,10 @@ def nuevo(ventana):
 #eliminar 
 def eliminar(ventana):
     elemento_eliminar = ventana.tabla_datos.selection()
-    ventana.tabla_datos.item(elemento_eliminar) #sirve para mostrar el registro seleccionado
+    dato = ventana.tabla_datos.item(elemento_eliminar)['text'] #sirve para mostrar el registro seleccionado
     ventana.tabla_datos.delete(elemento_eliminar)
+    db.eliminar('Usuarios',where="id='dato'")
+    #db.eliminar('Usuarios',where=)
     showwarning(title='Delete', message='registro eliminado')
 
 def actualizar(ventana):
@@ -30,10 +44,12 @@ def actualizar(ventana):
         apellidos = ventana.apellido_texto.get()
         celular = ventana.celular_texto.get()
         elemento_actualizar = ventana.tabla_datos.selection()
+        date = ventana.tabla_datos.item(elemento_actualizar)
         mensaje = askyesno(title='actualizar', message='estas seguro que deseas actulizar esta hvda')
         if mensaje == True:
             limpiar(ventana)
             ventana.tabla_datos.selection_remove(elemento_actualizar)
+            db.actualizar('Usuarios',date,where="id='{date['text']}'")
             return ventana.tabla_datos.item(elemento_actualizar, text=nombre, values=(apellidos,celular))
         else:
             showinfo(title='no actualizo', message='no esta seleccionado')
